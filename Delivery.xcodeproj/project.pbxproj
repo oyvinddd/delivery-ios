@@ -13,6 +13,14 @@
 		8C0F9CB925B8936E0008F3AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C0F9CB725B8936E0008F3AB /* LaunchScreen.storyboard */; };
 		8C0F9CC425B8936E0008F3AB /* DeliveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F9CC325B8936E0008F3AB /* DeliveryTests.swift */; };
 		8C0F9CCF25B8936E0008F3AB /* DeliveryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F9CCE25B8936E0008F3AB /* DeliveryUITests.swift */; };
+		8CCF354225B9F2F1008DC208 /* UIColor+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF354125B9F2F1008DC208 /* UIColor+App.swift */; };
+		8CCF354C25B9F5CF008DC208 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF354B25B9F5CF008DC208 /* RestaurantTableViewCell.swift */; };
+		8CD8852225BC61EB0071A082 /* UITableView+Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD8852125BC61EB0071A082 /* UITableView+Cell.swift */; };
+		8CD8852725BC64210071A082 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD8852625BC64210071A082 /* SearchTableViewCell.swift */; };
+		8CE81BAD25BC59F5009590DB /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE81BAC25BC59F5009590DB /* TopBar.swift */; };
+		8CE81BB225BC5B41009590DB /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE81BB125BC5B41009590DB /* Account.swift */; };
+		8CE81BB725BC5D11009590DB /* profile-picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CE81BB625BC5D11009590DB /* profile-picture.png */; };
+		8CFA07DD25B9FC450034E28B /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA07DC25B9FC450034E28B /* Restaurant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +53,14 @@
 		8C0F9CCA25B8936E0008F3AB /* DeliveryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeliveryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C0F9CCE25B8936E0008F3AB /* DeliveryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryUITests.swift; sourceTree = "<group>"; };
 		8C0F9CD025B8936E0008F3AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CCF354125B9F2F1008DC208 /* UIColor+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+App.swift"; sourceTree = "<group>"; };
+		8CCF354B25B9F5CF008DC208 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		8CD8852125BC61EB0071A082 /* UITableView+Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Cell.swift"; sourceTree = "<group>"; };
+		8CD8852625BC64210071A082 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		8CE81BAC25BC59F5009590DB /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
+		8CE81BB125BC5B41009590DB /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		8CE81BB625BC5D11009590DB /* profile-picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-picture.png"; sourceTree = "<group>"; };
+		8CFA07DC25B9FC450034E28B /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +111,9 @@
 		8C0F9CAB25B8936C0008F3AB /* Delivery */ = {
 			isa = PBXGroup;
 			children = (
+				8CE81BB625BC5D11009590DB /* profile-picture.png */,
+				8CFA07DB25B9FC1D0034E28B /* Entities */,
+				8CCF354025B9F2D9008DC208 /* Extensions */,
 				8C0F9CDF25B893B00008F3AB /* Screens */,
 				8C0F9CAC25B8936C0008F3AB /* AppDelegate.swift */,
 				8C0F9CB525B8936E0008F3AB /* Assets.xcassets */,
@@ -133,9 +152,46 @@
 		8C0F9CE625B894580008F3AB /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				8C0F9CB025B8936C0008F3AB /* MainViewController.swift */,
+				8CCF354A25B9F59F008DC208 /* Views */,
+				8CCF354925B9F595008DC208 /* ViewControllers */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		8CCF354025B9F2D9008DC208 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8CCF354125B9F2F1008DC208 /* UIColor+App.swift */,
+				8CD8852125BC61EB0071A082 /* UITableView+Cell.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8CCF354925B9F595008DC208 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8C0F9CB025B8936C0008F3AB /* MainViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8CCF354A25B9F59F008DC208 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8CCF354B25B9F5CF008DC208 /* RestaurantTableViewCell.swift */,
+				8CE81BAC25BC59F5009590DB /* TopBar.swift */,
+				8CD8852625BC64210071A082 /* SearchTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8CFA07DB25B9FC1D0034E28B /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				8CFA07DC25B9FC450034E28B /* Restaurant.swift */,
+				8CE81BB125BC5B41009590DB /* Account.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +299,7 @@
 			files = (
 				8C0F9CB925B8936E0008F3AB /* LaunchScreen.storyboard in Resources */,
 				8C0F9CB625B8936E0008F3AB /* Assets.xcassets in Resources */,
+				8CE81BB725BC5D11009590DB /* profile-picture.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,8 +324,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CD8852725BC64210071A082 /* SearchTableViewCell.swift in Sources */,
+				8CFA07DD25B9FC450034E28B /* Restaurant.swift in Sources */,
+				8CE81BAD25BC59F5009590DB /* TopBar.swift in Sources */,
+				8CCF354C25B9F5CF008DC208 /* RestaurantTableViewCell.swift in Sources */,
 				8C0F9CB125B8936C0008F3AB /* MainViewController.swift in Sources */,
 				8C0F9CAD25B8936C0008F3AB /* AppDelegate.swift in Sources */,
+				8CD8852225BC61EB0071A082 /* UITableView+Cell.swift in Sources */,
+				8CCF354225B9F2F1008DC208 /* UIColor+App.swift in Sources */,
+				8CE81BB225BC5B41009590DB /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
