@@ -13,10 +13,10 @@
 		8C0F9CB925B8936E0008F3AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C0F9CB725B8936E0008F3AB /* LaunchScreen.storyboard */; };
 		8C0F9CC425B8936E0008F3AB /* DeliveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F9CC325B8936E0008F3AB /* DeliveryTests.swift */; };
 		8C0F9CCF25B8936E0008F3AB /* DeliveryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F9CCE25B8936E0008F3AB /* DeliveryUITests.swift */; };
+		8C2D1B0025BE259600239794 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2D1AFF25BE259600239794 /* SearchTableViewCell.swift */; };
 		8CCF354225B9F2F1008DC208 /* UIColor+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF354125B9F2F1008DC208 /* UIColor+App.swift */; };
 		8CCF354C25B9F5CF008DC208 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF354B25B9F5CF008DC208 /* RestaurantTableViewCell.swift */; };
 		8CD8852225BC61EB0071A082 /* UITableView+Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD8852125BC61EB0071A082 /* UITableView+Cell.swift */; };
-		8CD8852725BC64210071A082 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD8852625BC64210071A082 /* SearchTableViewCell.swift */; };
 		8CE81BAD25BC59F5009590DB /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE81BAC25BC59F5009590DB /* TopBar.swift */; };
 		8CE81BB225BC5B41009590DB /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE81BB125BC5B41009590DB /* Account.swift */; };
 		8CE81BB725BC5D11009590DB /* profile-picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CE81BB625BC5D11009590DB /* profile-picture.png */; };
@@ -53,10 +53,10 @@
 		8C0F9CCA25B8936E0008F3AB /* DeliveryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeliveryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C0F9CCE25B8936E0008F3AB /* DeliveryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryUITests.swift; sourceTree = "<group>"; };
 		8C0F9CD025B8936E0008F3AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C2D1AFF25BE259600239794 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		8CCF354125B9F2F1008DC208 /* UIColor+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+App.swift"; sourceTree = "<group>"; };
 		8CCF354B25B9F5CF008DC208 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		8CD8852125BC61EB0071A082 /* UITableView+Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Cell.swift"; sourceTree = "<group>"; };
-		8CD8852625BC64210071A082 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		8CE81BAC25BC59F5009590DB /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
 		8CE81BB125BC5B41009590DB /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		8CE81BB625BC5D11009590DB /* profile-picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-picture.png"; sourceTree = "<group>"; };
@@ -180,7 +180,7 @@
 			children = (
 				8CCF354B25B9F5CF008DC208 /* RestaurantTableViewCell.swift */,
 				8CE81BAC25BC59F5009590DB /* TopBar.swift */,
-				8CD8852625BC64210071A082 /* SearchTableViewCell.swift */,
+				8C2D1AFF25BE259600239794 /* SearchTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -324,7 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CD8852725BC64210071A082 /* SearchTableViewCell.swift in Sources */,
+				8C2D1B0025BE259600239794 /* SearchTableViewCell.swift in Sources */,
 				8CFA07DD25B9FC450034E28B /* Restaurant.swift in Sources */,
 				8CE81BAD25BC59F5009590DB /* TopBar.swift in Sources */,
 				8CCF354C25B9F5CF008DC208 /* RestaurantTableViewCell.swift in Sources */,
