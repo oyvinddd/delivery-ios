@@ -9,6 +9,10 @@ import UIKit
 
 final class SearchTableViewCell: UITableViewCell {
     
+    static var identifier: String {
+        return String(describing: SearchTableViewCell.self)
+    }
+    
     private lazy var searchWrap: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -20,6 +24,7 @@ final class SearchTableViewCell: UITableViewCell {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.backgroundColor = .clear
+        textField.placeholder = "Search for restaurants"
         return textField
     }()
     
@@ -33,7 +38,7 @@ final class SearchTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupChildViews()
-        backgroundColor = .clear
+        //backgroundColor = .clear
         selectionStyle = .none
     }
     
@@ -42,8 +47,15 @@ final class SearchTableViewCell: UITableViewCell {
     }
     
     private func setupChildViews() {
-        addSubview(searchWrap)
-        addSubview(filterView)
+        contentView.addSubview(searchWrap)
+        contentView.addSubview(filterView)
         searchWrap.addSubview(searchField)
+        
+        NSLayoutConstraint.activate([
+            searchWrap.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16),
+            searchWrap.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            searchWrap.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+            searchWrap.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16)
+        ])
     }
 }

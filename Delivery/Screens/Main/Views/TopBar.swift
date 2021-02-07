@@ -21,7 +21,7 @@ final class TopBar: UIView {
     private lazy var subtitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.boldSystemFont(ofSize: 14)
         label.textColor = UIColor.Text.secondary
         label.text = "See something you like?"
         return label

@@ -37,7 +37,7 @@ final class RestaurantTableViewCell: UITableViewCell {
     var restaurant: Restaurant? {
         didSet {
             guard let restaurant = restaurant else { return }
-            titleLabel.text = restaurant.title
+            titleLabel.text = restaurant.name
         }
     }
     

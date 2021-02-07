@@ -8,7 +8,9 @@
 import Foundation
 
 struct Restaurant {
-    var title: String
+    var name: String
+    var position: Coordinates
+    var menu: [Food]
     var description: String
     var rating: Float
 }
