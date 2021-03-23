@@ -9,14 +9,11 @@ import UIKit
 
 final class SearchTableViewCell: UITableViewCell {
     
-    static var identifier: String {
-        return String(describing: SearchTableViewCell.self)
-    }
-    
     private lazy var searchWrap: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIColor.TextField.background
+        view.applyCornerRadius(6)
         return view
     }()
     
@@ -32,13 +29,14 @@ final class SearchTableViewCell: UITableViewCell {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIColor.TextField.background
+        view.applyCornerRadius(6)
         return view
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupChildViews()
-        //backgroundColor = .clear
+        backgroundColor = .white
         selectionStyle = .none
     }
     
@@ -54,8 +52,15 @@ final class SearchTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             searchWrap.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16),
             searchWrap.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            searchWrap.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
-            searchWrap.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16)
+            searchWrap.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            searchField.leftAnchor.constraint(equalTo: searchWrap.leftAnchor, constant: 8),
+            searchField.topAnchor.constraint(equalTo: searchWrap.topAnchor, constant: 10),
+            searchField.bottomAnchor.constraint(equalTo: searchWrap.bottomAnchor, constant: -10),
+            filterView.leftAnchor.constraint(equalTo: searchWrap.rightAnchor, constant: 16),
+            filterView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            filterView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16),
+            filterView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            filterView.widthAnchor.constraint(equalToConstant: 50)
         ])
     }
 }

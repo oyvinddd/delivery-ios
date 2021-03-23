@@ -7,16 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C0909B02607E750003DB796 /* SpecialOfferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0909AF2607E750003DB796 /* SpecialOfferTableViewCell.swift */; };
 		8C0F9CAD25B8936C0008F3AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F9CAC25B8936C0008F3AB /* AppDelegate.swift */; };
 		8C0F9CB125B8936C0008F3AB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F9CB025B8936C0008F3AB /* MainViewController.swift */; };
 		8C0F9CB625B8936E0008F3AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C0F9CB525B8936E0008F3AB /* Assets.xcassets */; };
 		8C0F9CB925B8936E0008F3AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C0F9CB725B8936E0008F3AB /* LaunchScreen.storyboard */; };
 		8C0F9CC425B8936E0008F3AB /* DeliveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F9CC325B8936E0008F3AB /* DeliveryTests.swift */; };
 		8C0F9CCF25B8936E0008F3AB /* DeliveryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F9CCE25B8936E0008F3AB /* DeliveryUITests.swift */; };
+		8C1E0A20260A14AA00A7EBD0 /* UIView+Visuals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1E0A1F260A14AA00A7EBD0 /* UIView+Visuals.swift */; };
+		8C1E0A28260A20F000A7EBD0 /* OfferCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1E0A27260A20F000A7EBD0 /* OfferCollectionViewCell.swift */; };
+		8C1E0A2D260A23E300A7EBD0 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1E0A2C260A23E300A7EBD0 /* HeaderTableViewCell.swift */; };
+		8C1E0A32260A2AE900A7EBD0 /* SpecialOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1E0A31260A2AE900A7EBD0 /* SpecialOffer.swift */; };
+		8C1E0A3A260A2C0500A7EBD0 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1E0A39260A2C0500A7EBD0 /* TestData.swift */; };
+		8C1E0A3F260A2CCA00A7EBD0 /* UICollectionView+Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1E0A3E260A2CCA00A7EBD0 /* UICollectionView+Cell.swift */; };
+		8C1E0A4F260A382100A7EBD0 /* restaurant-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C1E0A4E260A382100A7EBD0 /* restaurant-placeholder.png */; };
+		8C1E0A54260A3BAC00A7EBD0 /* UIImage+Scaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1E0A53260A3BAC00A7EBD0 /* UIImage+Scaling.swift */; };
+		8C1E0A59260A3E3000A7EBD0 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C1E0A58260A3E3000A7EBD0 /* placeholder.png */; };
 		8C296C6725D0058B00ED55FC /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C296C6625D0058B00ED55FC /* Food.swift */; };
 		8C296C6C25D0064900ED55FC /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C296C6B25D0064900ED55FC /* Coordinates.swift */; };
 		8C2D1B0025BE259600239794 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2D1AFF25BE259600239794 /* SearchTableViewCell.swift */; };
 		8C3497BA25E00BD300F35E69 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3497B925E00BD300F35E69 /* RestaurantViewController.swift */; };
+		8C39F3C5260A12A700A7CD35 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39F3C4260A12A700A7CD35 /* RatingView.swift */; };
 		8CCF354225B9F2F1008DC208 /* UIColor+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF354125B9F2F1008DC208 /* UIColor+App.swift */; };
 		8CCF354C25B9F5CF008DC208 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF354B25B9F5CF008DC208 /* RestaurantTableViewCell.swift */; };
 		8CD8852225BC61EB0071A082 /* UITableView+Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD8852125BC61EB0071A082 /* UITableView+Cell.swift */; };
@@ -44,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C0909AF2607E750003DB796 /* SpecialOfferTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialOfferTableViewCell.swift; sourceTree = "<group>"; };
 		8C0F9CA925B8936C0008F3AB /* Delivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Delivery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C0F9CAC25B8936C0008F3AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C0F9CB025B8936C0008F3AB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -56,10 +68,20 @@
 		8C0F9CCA25B8936E0008F3AB /* DeliveryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeliveryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C0F9CCE25B8936E0008F3AB /* DeliveryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryUITests.swift; sourceTree = "<group>"; };
 		8C0F9CD025B8936E0008F3AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C1E0A1F260A14AA00A7EBD0 /* UIView+Visuals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Visuals.swift"; sourceTree = "<group>"; };
+		8C1E0A27260A20F000A7EBD0 /* OfferCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCollectionViewCell.swift; sourceTree = "<group>"; };
+		8C1E0A2C260A23E300A7EBD0 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		8C1E0A31260A2AE900A7EBD0 /* SpecialOffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialOffer.swift; sourceTree = "<group>"; };
+		8C1E0A39260A2C0500A7EBD0 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		8C1E0A3E260A2CCA00A7EBD0 /* UICollectionView+Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Cell.swift"; sourceTree = "<group>"; };
+		8C1E0A4E260A382100A7EBD0 /* restaurant-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "restaurant-placeholder.png"; sourceTree = "<group>"; };
+		8C1E0A53260A3BAC00A7EBD0 /* UIImage+Scaling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Scaling.swift"; sourceTree = "<group>"; };
+		8C1E0A58260A3E3000A7EBD0 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		8C296C6625D0058B00ED55FC /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		8C296C6B25D0064900ED55FC /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		8C2D1AFF25BE259600239794 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		8C3497B925E00BD300F35E69 /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
+		8C39F3C4260A12A700A7CD35 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		8CCF354125B9F2F1008DC208 /* UIColor+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+App.swift"; sourceTree = "<group>"; };
 		8CCF354B25B9F5CF008DC208 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		8CD8852125BC61EB0071A082 /* UITableView+Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Cell.swift"; sourceTree = "<group>"; };
@@ -117,6 +139,8 @@
 		8C0F9CAB25B8936C0008F3AB /* Delivery */ = {
 			isa = PBXGroup;
 			children = (
+				8C1E0A58260A3E3000A7EBD0 /* placeholder.png */,
+				8C1E0A4E260A382100A7EBD0 /* restaurant-placeholder.png */,
 				8CE81BB625BC5D11009590DB /* profile-picture.png */,
 				8CFA07DB25B9FC1D0034E28B /* Entities */,
 				8CCF354025B9F2D9008DC208 /* Extensions */,
@@ -164,11 +188,26 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		8C39F3C3260A128B00A7CD35 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8CCF354B25B9F5CF008DC208 /* RestaurantTableViewCell.swift */,
+				8C2D1AFF25BE259600239794 /* SearchTableViewCell.swift */,
+				8C0909AF2607E750003DB796 /* SpecialOfferTableViewCell.swift */,
+				8C1E0A27260A20F000A7EBD0 /* OfferCollectionViewCell.swift */,
+				8C1E0A2C260A23E300A7EBD0 /* HeaderTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		8CCF354025B9F2D9008DC208 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				8CCF354125B9F2F1008DC208 /* UIColor+App.swift */,
 				8CD8852125BC61EB0071A082 /* UITableView+Cell.swift */,
+				8C1E0A1F260A14AA00A7EBD0 /* UIView+Visuals.swift */,
+				8C1E0A3E260A2CCA00A7EBD0 /* UICollectionView+Cell.swift */,
+				8C1E0A53260A3BAC00A7EBD0 /* UIImage+Scaling.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -185,9 +224,9 @@
 		8CCF354A25B9F59F008DC208 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8CCF354B25B9F5CF008DC208 /* RestaurantTableViewCell.swift */,
+				8C39F3C3260A128B00A7CD35 /* Cells */,
 				8CE81BAC25BC59F5009590DB /* TopBar.swift */,
-				8C2D1AFF25BE259600239794 /* SearchTableViewCell.swift */,
+				8C39F3C4260A12A700A7CD35 /* RatingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,6 +238,8 @@
 				8CE81BB125BC5B41009590DB /* Account.swift */,
 				8C296C6625D0058B00ED55FC /* Food.swift */,
 				8C296C6B25D0064900ED55FC /* Coordinates.swift */,
+				8C1E0A31260A2AE900A7EBD0 /* SpecialOffer.swift */,
+				8C1E0A39260A2C0500A7EBD0 /* TestData.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -308,6 +349,8 @@
 			files = (
 				8C0F9CB925B8936E0008F3AB /* LaunchScreen.storyboard in Resources */,
 				8C0F9CB625B8936E0008F3AB /* Assets.xcassets in Resources */,
+				8C1E0A4F260A382100A7EBD0 /* restaurant-placeholder.png in Resources */,
+				8C1E0A59260A3E3000A7EBD0 /* placeholder.png in Resources */,
 				8CE81BB725BC5D11009590DB /* profile-picture.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,8 +377,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C2D1B0025BE259600239794 /* SearchTableViewCell.swift in Sources */,
+				8C1E0A28260A20F000A7EBD0 /* OfferCollectionViewCell.swift in Sources */,
+				8C1E0A3F260A2CCA00A7EBD0 /* UICollectionView+Cell.swift in Sources */,
+				8C1E0A20260A14AA00A7EBD0 /* UIView+Visuals.swift in Sources */,
 				8CFA07DD25B9FC450034E28B /* Restaurant.swift in Sources */,
 				8CE81BAD25BC59F5009590DB /* TopBar.swift in Sources */,
+				8C1E0A54260A3BAC00A7EBD0 /* UIImage+Scaling.swift in Sources */,
+				8C1E0A32260A2AE900A7EBD0 /* SpecialOffer.swift in Sources */,
 				8CCF354C25B9F5CF008DC208 /* RestaurantTableViewCell.swift in Sources */,
 				8C0F9CB125B8936C0008F3AB /* MainViewController.swift in Sources */,
 				8C0F9CAD25B8936C0008F3AB /* AppDelegate.swift in Sources */,
@@ -343,8 +391,12 @@
 				8C296C6C25D0064900ED55FC /* Coordinates.swift in Sources */,
 				8C296C6725D0058B00ED55FC /* Food.swift in Sources */,
 				8CCF354225B9F2F1008DC208 /* UIColor+App.swift in Sources */,
+				8C1E0A3A260A2C0500A7EBD0 /* TestData.swift in Sources */,
 				8CE81BB225BC5B41009590DB /* Account.swift in Sources */,
+				8C0909B02607E750003DB796 /* SpecialOfferTableViewCell.swift in Sources */,
+				8C1E0A2D260A23E300A7EBD0 /* HeaderTableViewCell.swift in Sources */,
 				8C3497BA25E00BD300F35E69 /* RestaurantViewController.swift in Sources */,
+				8C39F3C5260A12A700A7CD35 /* RatingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

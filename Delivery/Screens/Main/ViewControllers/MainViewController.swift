@@ -9,6 +9,10 @@ import UIKit
 
 final class MainViewController: UIViewController {
     
+    private enum TableViewType: Int {
+        case search, header1, offer, header2, restaurant
+    }
+    
     private lazy var topBar: TopBar = {
         return TopBar(account: Account.current)
     }()
@@ -20,10 +24,10 @@ final class MainViewController: UIViewController {
         tableView.separatorStyle = .none
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 80
-        tableView.register(RestaurantTableViewCell.self,
-                           forCellReuseIdentifier: RestaurantTableViewCell.identifier)
-        tableView.register(SearchTableViewCell.self,
-                           forCellReuseIdentifier: SearchTableViewCell.identifier)
+        tableView.registerCell(RestaurantTableViewCell.self)
+        tableView.registerCell(SpecialOfferTableViewCell.self)
+        tableView.registerCell(SearchTableViewCell.self)
+        tableView.registerCell(HeaderTableViewCell.self)
         return tableView
     }()
     
@@ -35,7 +39,6 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupChildViews()
-        configureUI()
     }
     
     private func setupChildViews() {
@@ -52,28 +55,41 @@ final class MainViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
-    
-    private func configureUI() {
-    }
 }
 
 extension MainViewController: UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 1 : restaurants.count
+        return TableViewType.restaurant.rawValue + restaurants.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard indexPath.section != 0 else {
-            let cell = tableView.dequeueReusableCell(for: SearchTableViewCell.self, for: indexPath)
+        return cellFromIndexPath(indexPath)
+    }
+    
+    private func cellFromIndexPath(_ indexPath: IndexPath) -> UITableViewCell {
+        // search bar
+        if indexPath.row == TableViewType.search.rawValue {
+            return tableView.dequeueReusableCell(for: SearchTableViewCell.self, for: indexPath)
+        }
+        // header 1
+        if indexPath.row == TableViewType.header1.rawValue {
+            let cell = tableView.dequeueReusableCell(for: HeaderTableViewCell.self, for: indexPath)
+            cell.header = "Special Offers"
             return cell
         }
+        // special offers
+        if indexPath.row == TableViewType.offer.rawValue {
+            return tableView.dequeueReusableCell(for: SpecialOfferTableViewCell.self, for: indexPath)
+        }
+        if indexPath.row == TableViewType.header2.rawValue {
+            let cell = tableView.dequeueReusableCell(for: HeaderTableViewCell.self, for: indexPath)
+            cell.header = "Nearby Restaurants"
+            return cell
+        }
+        // restaurants
         let cell = tableView.dequeueReusableCell(for: RestaurantTableViewCell.self, for: indexPath)
-        cell.restaurant = restaurants[indexPath.row]
+        cell.restaurant = restaurants[indexPath.row - TableViewType.restaurant.rawValue]
         return cell
     }
 }

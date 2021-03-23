@@ -25,4 +25,9 @@ extension UIColor {
     struct TextField {
         static let background = UIColor(red: 234/255, green: 234/255, blue: 234/255, alpha: 1)
     }
+    
+    struct Offer {
+        static let one = UIColor(red: 244/255, green: 191/255, blue: 190/255, alpha: 1)
+        static let two = UIColor(red: 191/255, green: 229/255, blue: 240/255, alpha: 1)
+    }
 }
