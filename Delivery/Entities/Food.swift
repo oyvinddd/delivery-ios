@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Food {
+struct Food: Codable {
     var type: Int
     var name: String
     var lowerPrice: Int

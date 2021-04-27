@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Coordinates {
-    var lat, long: Float
+struct Coordinates: Codable {
+    var lat, lng: Float
     
-    init(_ lat: Float, _ long: Float) {
+    init(_ lat: Float, _ lng: Float) {
         self.lat = lat
-        self.long = long
+        self.lng = lng
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SpecialOffer {
+struct SpecialOffer: Codable {
     var id, price: Int
     var food: Food
     var restaurant: Restaurant

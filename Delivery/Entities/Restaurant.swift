@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Restaurant {
+struct Restaurant: Codable {
     var name: String
     var position: Coordinates
     var menu: [Food]
