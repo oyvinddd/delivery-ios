@@ -14,8 +14,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = MainViewController()
+        window?.rootViewController = initialViewController()
         window?.makeKeyAndVisible()
         return true
+    }
+    
+    private func initialViewController() -> UIViewController {
+        let viewController = RestaurantsViewController()
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.isNavigationBarHidden = true
+        return navigationController
     }
 }

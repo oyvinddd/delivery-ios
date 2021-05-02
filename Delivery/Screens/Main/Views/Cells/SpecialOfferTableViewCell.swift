@@ -27,7 +27,7 @@ final class SpecialOfferTableViewCell: UITableViewCell {
         return collectionView
     }()
     
-    var offers: [SpecialOffer] = TestData.offers
+    var offers: [SpecialOffer] = []
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

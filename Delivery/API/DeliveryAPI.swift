@@ -23,4 +23,5 @@ protocol RestaurantsAPI {
 // MARK: - Orders API
 
 protocol OrdersAPI {
+    func createOrder(orderRequest: OrderRequest, result: @escaping ResultBlock<Order>)
 }

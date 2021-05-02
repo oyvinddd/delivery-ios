@@ -20,7 +20,7 @@ extension URLSession {
                     return
                 }
                 guard 200 ..< 300 ~= urlResponse.statusCode else {
-                    print("Twitch - Status code was \(urlResponse.statusCode), but expected 2xx")
+                    print("Delivery - Status code was \(urlResponse.statusCode), but expected 2xx")
                     do {
                         let error: DEError = try self.decode(from: data)
                         result(.failure(error))

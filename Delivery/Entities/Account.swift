@@ -16,5 +16,5 @@ struct Account {
 }
 
 extension Account {
-    static let current = Account(id: 1, email: "user@test.com", firstName: "Øyvind")
+    static let current = Account(id: 2, email: "user@test.com", firstName: "Øyvind")
 }

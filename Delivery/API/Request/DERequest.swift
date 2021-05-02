@@ -46,3 +46,16 @@ struct RestaurantsRequest: DERequest {
     var params: [DEParam] = []
     var body: Data? = nil
 }
+
+struct CreateOrderRequest: DERequest {
+    var endpoint: String = Endpoints.orders
+    var method: HTTPMethod = .post
+    var params: [DEParam] = []
+    var body: Data?
+    
+    init(_ request: OrderRequest) {
+        let encoder = JSONEncoder()
+        encoder.keyEncodingStrategy = .convertToSnakeCase
+        body = try? encoder.encode(request)
+    }
+}

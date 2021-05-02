@@ -14,7 +14,6 @@ final class TopBar: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 25)
         label.textColor = UIColor.Text.primary
-        label.text = "Hello, John D."
         return label
     }()
     

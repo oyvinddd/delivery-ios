@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MainViewController: UIViewController {
+final class RestaurantsViewController: UIViewController {
     
     private enum TableViewType: Int {
         case search, header1, offer, header2, restaurant
@@ -17,10 +17,19 @@ final class MainViewController: UIViewController {
         return TopBar(account: Account.current)
     }()
     
+    private lazy var refreshControl: UIRefreshControl = {
+        let control = UIRefreshControl(frame: .zero)
+        control.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        control.tintColor = .lightGray
+        return control
+    }()
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.addSubview(refreshControl)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.separatorStyle = .none
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 80
@@ -31,14 +40,13 @@ final class MainViewController: UIViewController {
         return tableView
     }()
     
-    var restaurants: [Restaurant] = [
-        Restaurant(name: "Cafe Opera", position: Coordinates(0, 0), menu: [], description: "Nice cafe with food", rating: 0.7),
-        Restaurant(name: "Naboen Pub", position: Coordinates(0, 0), menu: [], description: "No description", rating: 0.5),
-    ]
+    // list of restaurants fetched from server
+    private var restaurants: [Restaurant] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupChildViews()
+        fetchRestaurants()
     }
     
     private func setupChildViews() {
@@ -55,9 +63,28 @@ final class MainViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
+    
+    @objc private func fetchRestaurants() {
+        DeliveryService.Restaurants.list { result in
+            self.refreshControl.endRefreshing()
+            switch result {
+            case .success(let restaurants):
+                self.restaurants = restaurants
+                self.tableView.reloadData()
+            case .failure(let error):
+                print("Error fetching restaurants from server: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    @objc private func refresh() {
+        fetchRestaurants()
+    }
 }
 
-extension MainViewController: UITableViewDataSource {
+// MARK: - Table View Data Source
+
+extension RestaurantsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return TableViewType.restaurant.rawValue + restaurants.count
@@ -91,5 +118,13 @@ extension MainViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(for: RestaurantTableViewCell.self, for: indexPath)
         cell.restaurant = restaurants[indexPath.row - TableViewType.restaurant.rawValue]
         return cell
+    }
+}
+
+extension RestaurantsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController = RestaurantViewController(restaurant: restaurants[indexPath.row])
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
