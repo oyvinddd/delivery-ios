@@ -30,4 +30,17 @@ extension UIColor {
         static let one = UIColor(red: 244/255, green: 191/255, blue: 190/255, alpha: 1)
         static let two = UIColor(red: 191/255, green: 229/255, blue: 240/255, alpha: 1)
     }
+    
+    struct Food {
+        static let burger = UIColor(red: 255/255, green: 220/255, blue: 122/255, alpha: 1)
+        static let sushi = UIColor(red: 122/255, green: 255/255, blue: 246/255, alpha: 1)
+        static let pasta = UIColor(red: 122/255, green: 255/255, blue: 246/255, alpha: 1)
+        static let fish = UIColor(red: 122/255, green: 182/255, blue: 255/255, alpha: 1)
+        static let steak = UIColor(red: 255/255, green: 169/255, blue: 143/255, alpha: 1)
+        static let pizza = UIColor(red: 255/255, green: 143/255, blue: 158/255, alpha: 1)
+        static let salad = UIColor(red: 122/255, green: 255/255, blue: 197/255, alpha: 1)
+        static let chicken = UIColor(red: 255/255, green: 238/255, blue: 143/255, alpha: 1)
+        static let squid = UIColor(red: 173/255, green: 143/255, blue: 255/255, alpha: 1)
+        static let ramen = UIColor(red: 223/255, green: 143/255, blue: 255/255, alpha: 1)
+    }
 }

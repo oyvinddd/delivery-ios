@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C01ECAA263EA645006EA40B /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C01ECA9263EA645006EA40B /* FoodTableViewCell.swift */; };
+		8C01ECAD263ED5A4006EA40B /* UIKit+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C01ECAC263ED5A4006EA40B /* UIKit+Factory.swift */; };
+		8C01ECB0263EEAFB006EA40B /* radio-on-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C01ECAF263EEAFB006EA40B /* radio-on-button.png */; };
+		8C01ECB3263EECFF006EA40B /* radio-off-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C01ECB2263EECFF006EA40B /* radio-off-button.png */; };
+		8C01ECB8263EF3B0006EA40B /* back-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C01ECB7263EF3B0006EA40B /* back-arrow.png */; };
 		8C0909B02607E750003DB796 /* SpecialOfferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0909AF2607E750003DB796 /* SpecialOfferTableViewCell.swift */; };
 		8C0F9CAD25B8936C0008F3AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F9CAC25B8936C0008F3AB /* AppDelegate.swift */; };
 		8C0F9CB125B8936C0008F3AB /* RestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0F9CB025B8936C0008F3AB /* RestaurantsViewController.swift */; };
@@ -45,6 +50,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C01ECA9263EA645006EA40B /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
+		8C01ECAC263ED5A4006EA40B /* UIKit+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Factory.swift"; sourceTree = "<group>"; };
+		8C01ECAF263EEAFB006EA40B /* radio-on-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radio-on-button.png"; sourceTree = "<group>"; };
+		8C01ECB2263EECFF006EA40B /* radio-off-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radio-off-button.png"; sourceTree = "<group>"; };
+		8C01ECB7263EF3B0006EA40B /* back-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-arrow.png"; sourceTree = "<group>"; };
 		8C0909AF2607E750003DB796 /* SpecialOfferTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialOfferTableViewCell.swift; sourceTree = "<group>"; };
 		8C0F9CA925B8936C0008F3AB /* Delivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Delivery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C0F9CAC25B8936C0008F3AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +105,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C01ECB5263EED0B006EA40B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8C01ECB7263EF3B0006EA40B /* back-arrow.png */,
+				8C1E0A58260A3E3000A7EBD0 /* placeholder.png */,
+				8C1E0A4E260A382100A7EBD0 /* restaurant-placeholder.png */,
+				8C01ECAF263EEAFB006EA40B /* radio-on-button.png */,
+				8C01ECB2263EECFF006EA40B /* radio-off-button.png */,
+				8CE81BB625BC5D11009590DB /* profile-picture.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		8C0F9CA025B8936C0008F3AB = {
 			isa = PBXGroup;
 			children = (
@@ -114,10 +137,8 @@
 		8C0F9CAB25B8936C0008F3AB /* Delivery */ = {
 			isa = PBXGroup;
 			children = (
+				8C01ECB5263EED0B006EA40B /* Resources */,
 				8C80E6E72638084600F4DCDD /* API */,
-				8C1E0A58260A3E3000A7EBD0 /* placeholder.png */,
-				8C1E0A4E260A382100A7EBD0 /* restaurant-placeholder.png */,
-				8CE81BB625BC5D11009590DB /* profile-picture.png */,
 				8CFA07DB25B9FC1D0034E28B /* Entities */,
 				8CCF354025B9F2D9008DC208 /* Extensions */,
 				8C0F9CDF25B893B00008F3AB /* Screens */,
@@ -154,6 +175,7 @@
 				8C0909AF2607E750003DB796 /* SpecialOfferTableViewCell.swift */,
 				8C1E0A27260A20F000A7EBD0 /* OfferCollectionViewCell.swift */,
 				8C1E0A2C260A23E300A7EBD0 /* HeaderTableViewCell.swift */,
+				8C01ECA9263EA645006EA40B /* FoodTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -197,6 +219,7 @@
 				8C1E0A3E260A2CCA00A7EBD0 /* UICollectionView+Cell.swift */,
 				8C1E0A53260A3BAC00A7EBD0 /* UIImage+Scaling.swift */,
 				8C80E6FE2638164F00F4DCDD /* URLSession+Codable.swift */,
+				8C01ECAC263ED5A4006EA40B /* UIKit+Factory.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -291,10 +314,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C01ECB0263EEAFB006EA40B /* radio-on-button.png in Resources */,
 				8C0F9CB925B8936E0008F3AB /* LaunchScreen.storyboard in Resources */,
+				8C01ECB8263EF3B0006EA40B /* back-arrow.png in Resources */,
 				8C0F9CB625B8936E0008F3AB /* Assets.xcassets in Resources */,
 				8C1E0A4F260A382100A7EBD0 /* restaurant-placeholder.png in Resources */,
 				8C1E0A59260A3E3000A7EBD0 /* placeholder.png in Resources */,
+				8C01ECB3263EECFF006EA40B /* radio-off-button.png in Resources */,
 				8CE81BB725BC5D11009590DB /* profile-picture.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,7 +353,9 @@
 				8C80E6FF2638164F00F4DCDD /* URLSession+Codable.swift in Sources */,
 				8C80E6EE2638107F00F4DCDD /* DeliveryAPI.swift in Sources */,
 				8C80E6F22638129E00F4DCDD /* RestaurantsRepository.swift in Sources */,
+				8C01ECAA263EA645006EA40B /* FoodTableViewCell.swift in Sources */,
 				8CE81BB225BC5B41009590DB /* Account.swift in Sources */,
+				8C01ECAD263ED5A4006EA40B /* UIKit+Factory.swift in Sources */,
 				8C80E6FB2638133A00F4DCDD /* DERequest.swift in Sources */,
 				8C0909B02607E750003DB796 /* SpecialOfferTableViewCell.swift in Sources */,
 				8C1E0A2D260A23E300A7EBD0 /* HeaderTableViewCell.swift in Sources */,
