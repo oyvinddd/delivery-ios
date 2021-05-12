@@ -8,7 +8,13 @@
 import Foundation
 
 struct SpecialOffer: Codable {
-    var id, price: Int
+    
+    private enum CodingKeys: CodingKey {
+        case id, customerID, price
+        case food
+    }
+    
+    var id, customerID, price: Int
     var food: Food
-    var restaurant: Restaurant
+    var expirationTime: String?
 }

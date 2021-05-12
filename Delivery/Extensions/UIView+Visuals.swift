@@ -9,11 +9,11 @@ import UIKit
 
 extension UIView {
     
-    func applyDropShadow() {
-        layer.shadowColor = UIColor.Text.secondary.cgColor
+    func applyDropShadow(color: UIColor = UIColor.Text.secondary, radius: CGFloat = 10, opacity: Float = 0.4) {
+        layer.shadowColor = color.cgColor
         layer.masksToBounds = false
-        layer.shadowRadius = 10.0
-        layer.shadowOpacity = 0.4
+        layer.shadowRadius = radius
+        layer.shadowOpacity = opacity
         layer.shadowOffset = CGSize(width: 0.0, height: 8.0)
     }
     

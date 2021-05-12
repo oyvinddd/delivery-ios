@@ -41,10 +41,10 @@
 		8C80E7022638167B00F4DCDD /* DEError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80E7012638167B00F4DCDD /* DEError.swift */; };
 		8CCF354225B9F2F1008DC208 /* UIColor+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF354125B9F2F1008DC208 /* UIColor+App.swift */; };
 		8CCF354C25B9F5CF008DC208 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF354B25B9F5CF008DC208 /* RestaurantTableViewCell.swift */; };
+		8CD5DF6C264BE37400B5D572 /* profile-picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CD5DF6B264BE37400B5D572 /* profile-picture.png */; };
 		8CD8852225BC61EB0071A082 /* UITableView+Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD8852125BC61EB0071A082 /* UITableView+Cell.swift */; };
 		8CE81BAD25BC59F5009590DB /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE81BAC25BC59F5009590DB /* TopBar.swift */; };
 		8CE81BB225BC5B41009590DB /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE81BB125BC5B41009590DB /* Account.swift */; };
-		8CE81BB725BC5D11009590DB /* profile-picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CE81BB625BC5D11009590DB /* profile-picture.png */; };
 		8CF40152264BC59E0002127F /* restaurant-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CF40150264BC59E0002127F /* restaurant-1.png */; };
 		8CF40153264BC59E0002127F /* restaurant-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CF40151264BC59E0002127F /* restaurant-2.png */; };
 		8CF40157264BCF100002127F /* UIButton+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF40156264BCF100002127F /* UIButton+Util.swift */; };
@@ -88,10 +88,10 @@
 		8C80E7012638167B00F4DCDD /* DEError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEError.swift; sourceTree = "<group>"; };
 		8CCF354125B9F2F1008DC208 /* UIColor+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+App.swift"; sourceTree = "<group>"; };
 		8CCF354B25B9F5CF008DC208 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		8CD5DF6B264BE37400B5D572 /* profile-picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-picture.png"; sourceTree = "<group>"; };
 		8CD8852125BC61EB0071A082 /* UITableView+Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Cell.swift"; sourceTree = "<group>"; };
 		8CE81BAC25BC59F5009590DB /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
 		8CE81BB125BC5B41009590DB /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		8CE81BB625BC5D11009590DB /* profile-picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-picture.png"; sourceTree = "<group>"; };
 		8CF40150264BC59E0002127F /* restaurant-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "restaurant-1.png"; sourceTree = "<group>"; };
 		8CF40151264BC59E0002127F /* restaurant-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "restaurant-2.png"; sourceTree = "<group>"; };
 		8CF40156264BCF100002127F /* UIButton+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Util.swift"; sourceTree = "<group>"; };
@@ -114,10 +114,10 @@
 			children = (
 				8CF40150264BC59E0002127F /* restaurant-1.png */,
 				8CF40151264BC59E0002127F /* restaurant-2.png */,
+				8CD5DF6B264BE37400B5D572 /* profile-picture.png */,
 				8C01ECB7263EF3B0006EA40B /* back-arrow.png */,
 				8C01ECAF263EEAFB006EA40B /* radio-on-button.png */,
 				8C01ECB2263EECFF006EA40B /* radio-off-button.png */,
-				8CE81BB625BC5D11009590DB /* profile-picture.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -342,8 +342,8 @@
 				8C01ECB8263EF3B0006EA40B /* back-arrow.png in Resources */,
 				8C0F9CB625B8936E0008F3AB /* Assets.xcassets in Resources */,
 				8C01ECB3263EECFF006EA40B /* radio-off-button.png in Resources */,
+				8CD5DF6C264BE37400B5D572 /* profile-picture.png in Resources */,
 				8CF40152264BC59E0002127F /* restaurant-1.png in Resources */,
-				8CE81BB725BC5D11009590DB /* profile-picture.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

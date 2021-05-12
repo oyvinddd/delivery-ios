@@ -27,7 +27,28 @@ final class SpecialOfferTableViewCell: UITableViewCell {
         return collectionView
     }()
     
-    var offers: [SpecialOffer] = []
+    var offers: [SpecialOffer] = [
+        SpecialOffer(
+            id: 2,
+            customerID: 3,
+            price: 199,
+            food: Food(restaurantId: 3, type: 4, name: "Steak", lowerPrice: 199, normalPrice: 229),
+            expirationTime: "EXPIRES IN 02:11"
+        ),
+        SpecialOffer(
+            id: 0,
+            customerID: 0,
+            price: 119,
+            food: Food(restaurantId: 0, type: 1, name: "Sushi", lowerPrice: 119, normalPrice: 159),
+            expirationTime: "EXPIRES IN 05:01"),
+        SpecialOffer(
+            id: 1,
+            customerID: 1,
+            price: 129,
+            food: Food(restaurantId: 1, type: 0, name: "Burger", lowerPrice: 129, normalPrice: 189),
+            expirationTime: "EXPIRES IN 05:22"
+        )
+    ]
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

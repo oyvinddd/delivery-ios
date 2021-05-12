@@ -34,10 +34,10 @@ final class TopBar: UIView {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.addGestureRecognizer(tapRecognizer)
-        view.backgroundColor = UIColor.Text.primary
+        //view.backgroundColor = UIColor.Text.primary
         view.isUserInteractionEnabled = true
-        view.layer.cornerRadius = 25
-        view.layer.masksToBounds = true
+        //view.layer.cornerRadius = 25
+        //view.layer.masksToBounds = true
         return view
     }()
     
@@ -45,8 +45,8 @@ final class TopBar: UIView {
         let imageView = UIImageView(image: UIImage(named: "profile-picture.png"))
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-        imageView.layer.masksToBounds = true
-        imageView.layer.cornerRadius = 22
+        //imageView.layer.masksToBounds = true
+        //imageView.layer.cornerRadius = 22
         return imageView
     }()
     
