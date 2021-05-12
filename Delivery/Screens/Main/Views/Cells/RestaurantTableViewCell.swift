@@ -38,7 +38,7 @@ final class RestaurantTableViewCell: UITableViewCell {
         
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 12)
+        label.font = UIFont.boldSystemFont(ofSize: 14)
         label.textColor = .white
         label.textAlignment = .center
         label.text = "open".uppercased()

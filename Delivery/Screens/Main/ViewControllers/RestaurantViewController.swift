@@ -235,7 +235,7 @@ extension RestaurantViewController: UITableViewDelegate {
         selectedFood = food
         if selectedFood != nil {
             orderButton.toggle(on: true)
-            orderButton.setTitle("Order (\(food.normalPrice) NOK)".uppercased(), for: .normal)
+            orderButton.setTitle("Order (189 NOK)".uppercased(), for: .normal)
         }
     }
 }

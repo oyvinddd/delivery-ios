@@ -31,6 +31,9 @@
 		8C39F3C5260A12A700A7CD35 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C39F3C4260A12A700A7CD35 /* RatingView.swift */; };
 		8C5CAF11263AA46E0095513A /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CAF10263AA46E0095513A /* Order.swift */; };
 		8C5CAF14263AA6590095513A /* OrdersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5CAF13263AA6590095513A /* OrdersRepository.swift */; };
+		8C64B764264BF551007AE095 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C64B763264BF551007AE095 /* MainTabBarController.swift */; };
+		8C64B766264BFB16007AE095 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C64B765264BFB16007AE095 /* MapViewController.swift */; };
+		8C64B768264BFC4B007AE095 /* MyOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C64B767264BFC4B007AE095 /* MyOrdersViewController.swift */; };
 		8C732DEA2643E725005140AB /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C732DE92643E725005140AB /* PopUpViewController.swift */; };
 		8C80E6EB26380FEA00F4DCDD /* DeliveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80E6EA26380FEA00F4DCDD /* DeliveryService.swift */; };
 		8C80E6EE2638107F00F4DCDD /* DeliveryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80E6ED2638107F00F4DCDD /* DeliveryAPI.swift */; };
@@ -42,6 +45,7 @@
 		8CCF354225B9F2F1008DC208 /* UIColor+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF354125B9F2F1008DC208 /* UIColor+App.swift */; };
 		8CCF354C25B9F5CF008DC208 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCF354B25B9F5CF008DC208 /* RestaurantTableViewCell.swift */; };
 		8CD5DF6C264BE37400B5D572 /* profile-picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CD5DF6B264BE37400B5D572 /* profile-picture.png */; };
+		8CD5DF6E264BF27700B5D572 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD5DF6D264BF27700B5D572 /* SettingsViewController.swift */; };
 		8CD8852225BC61EB0071A082 /* UITableView+Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD8852125BC61EB0071A082 /* UITableView+Cell.swift */; };
 		8CE81BAD25BC59F5009590DB /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE81BAC25BC59F5009590DB /* TopBar.swift */; };
 		8CE81BB225BC5B41009590DB /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE81BB125BC5B41009590DB /* Account.swift */; };
@@ -78,6 +82,9 @@
 		8C39F3C4260A12A700A7CD35 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		8C5CAF10263AA46E0095513A /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		8C5CAF13263AA6590095513A /* OrdersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersRepository.swift; sourceTree = "<group>"; };
+		8C64B763264BF551007AE095 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		8C64B765264BFB16007AE095 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		8C64B767264BFC4B007AE095 /* MyOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersViewController.swift; sourceTree = "<group>"; };
 		8C732DE92643E725005140AB /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		8C80E6EA26380FEA00F4DCDD /* DeliveryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryService.swift; sourceTree = "<group>"; };
 		8C80E6ED2638107F00F4DCDD /* DeliveryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryAPI.swift; sourceTree = "<group>"; };
@@ -89,6 +96,7 @@
 		8CCF354125B9F2F1008DC208 /* UIColor+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+App.swift"; sourceTree = "<group>"; };
 		8CCF354B25B9F5CF008DC208 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		8CD5DF6B264BE37400B5D572 /* profile-picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-picture.png"; sourceTree = "<group>"; };
+		8CD5DF6D264BF27700B5D572 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8CD8852125BC61EB0071A082 /* UITableView+Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Cell.swift"; sourceTree = "<group>"; };
 		8CE81BAC25BC59F5009590DB /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
 		8CE81BB125BC5B41009590DB /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -158,6 +166,7 @@
 		8C0F9CDF25B893B00008F3AB /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				8C64B762264BF537007AE095 /* Common */,
 				8C0F9CE625B894580008F3AB /* Main */,
 			);
 			path = Screens;
@@ -183,6 +192,14 @@
 				8C01ECA9263EA645006EA40B /* FoodTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		8C64B762264BF537007AE095 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8C64B763264BF551007AE095 /* MainTabBarController.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		8C732DE62643E4DB005140AB /* Vendor */ = {
@@ -251,6 +268,9 @@
 			children = (
 				8C0F9CB025B8936C0008F3AB /* RestaurantsViewController.swift */,
 				8C3497B925E00BD300F35E69 /* RestaurantViewController.swift */,
+				8CD5DF6D264BF27700B5D572 /* SettingsViewController.swift */,
+				8C64B765264BFB16007AE095 /* MapViewController.swift */,
+				8C64B767264BFC4B007AE095 /* MyOrdersViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -356,6 +376,7 @@
 			files = (
 				8C2D1B0025BE259600239794 /* SearchTableViewCell.swift in Sources */,
 				8C1E0A28260A20F000A7EBD0 /* OfferCollectionViewCell.swift in Sources */,
+				8C64B764264BF551007AE095 /* MainTabBarController.swift in Sources */,
 				8C1E0A3F260A2CCA00A7EBD0 /* UICollectionView+Cell.swift in Sources */,
 				8C1E0A20260A14AA00A7EBD0 /* UIView+Visuals.swift in Sources */,
 				8CFA07DD25B9FC450034E28B /* Restaurant.swift in Sources */,
@@ -366,6 +387,7 @@
 				8CCF354C25B9F5CF008DC208 /* RestaurantTableViewCell.swift in Sources */,
 				8C0F9CB125B8936C0008F3AB /* RestaurantsViewController.swift in Sources */,
 				8C80E6F7263812E400F4DCDD /* URLRequestBuilder.swift in Sources */,
+				8C64B768264BFC4B007AE095 /* MyOrdersViewController.swift in Sources */,
 				8C0F9CAD25B8936C0008F3AB /* AppDelegate.swift in Sources */,
 				8CD8852225BC61EB0071A082 /* UITableView+Cell.swift in Sources */,
 				8C296C6C25D0064900ED55FC /* Coordinates.swift in Sources */,
@@ -377,8 +399,10 @@
 				8C80E6EE2638107F00F4DCDD /* DeliveryAPI.swift in Sources */,
 				8C80E6F22638129E00F4DCDD /* RestaurantsRepository.swift in Sources */,
 				8C01ECAA263EA645006EA40B /* FoodTableViewCell.swift in Sources */,
+				8CD5DF6E264BF27700B5D572 /* SettingsViewController.swift in Sources */,
 				8CE81BB225BC5B41009590DB /* Account.swift in Sources */,
 				8C01ECAD263ED5A4006EA40B /* UIKit+Factory.swift in Sources */,
+				8C64B766264BFB16007AE095 /* MapViewController.swift in Sources */,
 				8C732DEA2643E725005140AB /* PopUpViewController.swift in Sources */,
 				8C80E6FB2638133A00F4DCDD /* DERequest.swift in Sources */,
 				8C0909B02607E750003DB796 /* SpecialOfferTableViewCell.swift in Sources */,

@@ -45,6 +45,7 @@ final class RestaurantsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hidesBottomBarWhenPushed = true
         setupChildViews()
         fetchRestaurants()
     }
