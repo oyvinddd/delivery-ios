@@ -8,6 +8,11 @@
 import Foundation
 
 struct Restaurant: Codable {
+    
+    private enum CodingKeys: CodingKey {
+        case id, name, position, menu
+    }
+    
     var id: Int
     var name: String
     var position: Coordinates

@@ -15,11 +15,13 @@ extension UIColor {
     
     struct Button {
         static let primary = UIColor(red: 254/255, green: 53/255, blue: 78/255, alpha: 1)
+        static let disabled = UIColor(red: 201/255, green: 38/255, blue: 57/255, alpha: 1)
     }
     
     struct Text {
         static let primary = UIColor(red: 47/255, green: 50/255, blue: 56/255, alpha: 1)
         static let secondary = UIColor(red: 144/255, green: 147/255, blue: 152/255, alpha: 1)
+        static let active = UIColor(red: 70/255, green: 158/255, blue: 155/255, alpha: 1)
     }
     
     struct TextField {

@@ -30,6 +30,20 @@ final class SearchTableViewCell: UITableViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIColor.TextField.background
         view.applyCornerRadius(6)
+        
+        let image = UIImage(systemName: "gearshape.fill")?.withRenderingMode(.alwaysTemplate)
+        let imageView = UIImageView(image: image)
+        imageView.tintColor = UIColor.Text.secondary
+        
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(imageView)
+        
+        NSLayoutConstraint.activate([
+            imageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10),
+            imageView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10),
+            imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
+            imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10)
+        ])
         return view
     }()
     
@@ -60,7 +74,7 @@ final class SearchTableViewCell: UITableViewCell {
             filterView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             filterView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16),
             filterView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            filterView.widthAnchor.constraint(equalToConstant: 50)
+            filterView.widthAnchor.constraint(equalTo: filterView.heightAnchor)
         ])
     }
 }

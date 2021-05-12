@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol TopBarDelegate: AnyObject {
+    func didTapProfilePicture()
+}
+
 final class TopBar: UIView {
     
     private lazy var topLabel: UILabel = {
@@ -29,7 +33,9 @@ final class TopBar: UIView {
     private lazy var profilePictureWrap: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.addGestureRecognizer(tapRecognizer)
         view.backgroundColor = UIColor.Text.primary
+        view.isUserInteractionEnabled = true
         view.layer.cornerRadius = 25
         view.layer.masksToBounds = true
         return view
@@ -44,12 +50,18 @@ final class TopBar: UIView {
         return imageView
     }()
     
-    init(account: Account) {
+    private lazy var tapRecognizer: UITapGestureRecognizer = {
+        return UITapGestureRecognizer(target: self, action: #selector(profilePictureTapped))
+    }()
+    
+    var delegate: TopBarDelegate?
+    
+    init(account: Account, delegate: TopBarDelegate? = nil) {
         super.init(frame: .zero)
-        translatesAutoresizingMaskIntoConstraints = false
         setupChildViews()
         configureUI()
         topLabel.text = "Hello, \(account.firstName!)"
+        self.delegate = delegate
     }
     
     required init?(coder: NSCoder) {
@@ -82,6 +94,11 @@ final class TopBar: UIView {
     }
     
     private func configureUI() {
+        translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .white
+    }
+    
+    @objc private func profilePictureTapped(sender: UITapGestureRecognizer) {
+        delegate?.didTapProfilePicture()
     }
 }

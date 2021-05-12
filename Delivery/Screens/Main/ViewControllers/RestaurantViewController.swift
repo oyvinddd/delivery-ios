@@ -10,7 +10,7 @@ import UIKit
 final class RestaurantViewController: UIViewController {
     
     private lazy var restaurantImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "restaurant-placeholder.png"))
+        let imageView = UIImageView(image: UIImage(named: "restaurant-\(restaurant.id % 2 + 1).png"))
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         return imageView
@@ -20,15 +20,16 @@ final class RestaurantViewController: UIViewController {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
-        let imageView = UIImageView(image: UIImage(named: "back-arrow.png"))
+        let imageView = UIImageView(image: UIImage(named: "back-arrow.png")!.withRenderingMode(.alwaysTemplate))
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
+        imageView.tintColor = UIColor.Text.primary
         view.addSubview(imageView)
         NSLayoutConstraint.activate([
-            imageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 6),
-            imageView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -8),
-            imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 8),
-            imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8)
+            imageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 8),
+            imageView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -12),
+            imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 12),
+            imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -12)
         ])
         view.isUserInteractionEnabled = true
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(backButtonTapped))
@@ -47,7 +48,7 @@ final class RestaurantViewController: UIViewController {
     private lazy var nameLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont.boldSystemFont(ofSize: 24)
         label.textColor = UIColor.Text.primary
         return label
     }()
@@ -61,9 +62,14 @@ final class RestaurantViewController: UIViewController {
         return label
     }()
     
+    private lazy var tabBarView: UIView = {
+        return createTabBar()
+    }()
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)
         tableView.backgroundColor = UIColor.TableView.background
         tableView.separatorStyle = .none
         tableView.dataSource = self
@@ -77,8 +83,16 @@ final class RestaurantViewController: UIViewController {
     
     private lazy var orderButton: UIButton = {
         let button = UIButton.create(with: "Order", backgroundColor: UIColor.Button.primary)
-        button.addTarget(self, action: #selector(createOrder), for: .touchUpInside)
+        button.addTarget(self, action: #selector(orderButtonTapped), for: .touchUpInside)
+        button.toggle(on: false)
         return button
+    }()
+    
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .medium)
+        indicator.color = .white
+        indicator.startAnimating()
+        return indicator
     }()
     
     private var restaurant: Restaurant
@@ -106,6 +120,7 @@ final class RestaurantViewController: UIViewController {
         view.addSubview(infoWrapperView)
         infoWrapperView.addSubview(nameLabel)
         infoWrapperView.addSubview(ratingLabel)
+        infoWrapperView.addSubview(tabBarView)
         infoWrapperView.addSubview(tableView)
         infoWrapperView.addSubview(orderButton)
         
@@ -128,9 +143,12 @@ final class RestaurantViewController: UIViewController {
             ratingLabel.leftAnchor.constraint(equalTo: infoWrapperView.leftAnchor, constant: 16),
             ratingLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
             ratingLabel.rightAnchor.constraint(equalTo: infoWrapperView.rightAnchor, constant: -16),
+            tabBarView.leftAnchor.constraint(equalTo: infoWrapperView.leftAnchor),
+            tabBarView.rightAnchor.constraint(equalTo: infoWrapperView.rightAnchor),
+            tabBarView.topAnchor.constraint(equalTo: ratingLabel.bottomAnchor, constant: 16),
             tableView.leftAnchor.constraint(equalTo: infoWrapperView.leftAnchor),
             tableView.rightAnchor.constraint(equalTo: infoWrapperView.rightAnchor),
-            tableView.topAnchor.constraint(equalTo: ratingLabel.bottomAnchor, constant: 16),
+            tableView.topAnchor.constraint(equalTo: tabBarView.bottomAnchor),
             orderButton.leftAnchor.constraint(equalTo: infoWrapperView.leftAnchor, constant: 16),
             orderButton.rightAnchor.constraint(equalTo: infoWrapperView.rightAnchor, constant: -16),
             orderButton.topAnchor.constraint(equalTo: tableView.bottomAnchor),
@@ -145,12 +163,34 @@ final class RestaurantViewController: UIViewController {
         infoWrapperView.layer.cornerRadius = 20
     }
     
-    @objc private func createOrder() {
+    func toggleButtonLoading(_ loading: Bool) {
+        orderButton.toggle(on: !loading)
+        if loading {
+            orderButton.setTitleColor(UIColor.clear, for: .normal)
+            orderButton.addSubview(activityIndicator)
+            centerActivityIndicator()
+        } else {
+            orderButton.setTitleColor(UIColor.white, for: .normal)
+            if activityIndicator.superview != nil {
+                activityIndicator.removeFromSuperview()
+            }
+        }
+    }
+    
+    private func centerActivityIndicator() {
+        activityIndicator.center = CGPoint(x: orderButton.frame.width / 2, y: orderButton.frame.height / 2)
+    }
+    
+    // MARK: - Button Handling
+    
+    @objc private func orderButtonTapped() {
         guard let food = selectedFood else {
             return
         }
+        toggleButtonLoading(true)
         let request = OrderRequest(customerId: Account.current.id, food: food)
         DeliveryService.Orders.create(request: request) { result in
+            self.toggleButtonLoading(false)
             switch result {
             case .success(let order):
                 print("Order created: \(order)")
@@ -167,6 +207,8 @@ final class RestaurantViewController: UIViewController {
     }
 }
 
+// MARK: - Table View Data Source
+
 extension RestaurantViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -180,6 +222,8 @@ extension RestaurantViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - Table View Delegate
+
 extension RestaurantViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -189,6 +233,76 @@ extension RestaurantViewController: UITableViewDelegate {
     private func selectFood(with indexPath: IndexPath) {
         let food = restaurant.menu[indexPath.row]
         selectedFood = food
-        orderButton.setTitle("Order (\(food.normalPrice) NOK)".uppercased(), for: .normal)
+        if selectedFood != nil {
+            orderButton.toggle(on: true)
+            orderButton.setTitle("Order (\(food.normalPrice) NOK)".uppercased(), for: .normal)
+        }
+    }
+}
+
+// MARK: - Tab Bar
+
+extension RestaurantViewController {
+    
+    private func createTabBar() -> UIView {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        
+        let borderView = UIView()
+        borderView.translatesAutoresizingMaskIntoConstraints = false
+        borderView.backgroundColor = UIColor.TableView.background
+        
+        let info = createTabBarItem(title: "Info", active: false)
+        let menu = createTabBarItem(title: "Menu", active: true)
+        let directions = createTabBarItem(title: "Directions", active: false)
+        let reviews = createTabBarItem(title: "Reviews", active: false)
+        
+        let stackView = UIStackView(arrangedSubviews: [info, menu, directions, reviews])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.alignment = .center
+        stackView.distribution = .fillProportionally
+        stackView.axis = .horizontal
+        
+        view.addSubview(borderView)
+        view.addSubview(stackView)
+        
+        NSLayoutConstraint.activate([
+            borderView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            borderView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            borderView.topAnchor.constraint(equalTo: view.topAnchor),
+            borderView.heightAnchor.constraint(equalToConstant: 10),
+            stackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
+            stackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16),
+            stackView.topAnchor.constraint(equalTo: borderView.bottomAnchor),
+            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            stackView.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        
+        return view
+    }
+    
+    private func createTabBarItem(title: String, active: Bool) -> UIView {
+        let view = UIView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = active ? UIColor.Text.active : UIColor.Text.primary
+        label.font = UIFont.boldSystemFont(ofSize: 15)
+        label.textAlignment = .center
+        label.text = title
+        
+        view.addSubview(label)
+        
+        NSLayoutConstraint.activate([
+            label.leftAnchor.constraint(equalTo: view.leftAnchor),
+            label.rightAnchor.constraint(equalTo: view.rightAnchor),
+            label.topAnchor.constraint(equalTo: view.topAnchor),
+            label.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
+        return view
     }
 }

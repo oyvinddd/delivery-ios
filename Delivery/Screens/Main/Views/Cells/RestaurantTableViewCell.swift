@@ -29,16 +29,30 @@ final class RestaurantTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    private lazy var openStatusLabel: UILabel = {
+    private lazy var openStatusWrap: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor.Text.primary
+        view.applyCornerRadius(2)
+        view.alpha = 0.8
+        
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 12)
-        label.backgroundColor = UIColor.Text.primary
         label.textColor = .white
         label.textAlignment = .center
-        label.alpha = 0.9
-        //label.inse = UIEdgeInsetsMake(0, 0, 5, 0)
-        return label
+        label.text = "open".uppercased()
+        
+        view.addSubview(label)
+        
+        NSLayoutConstraint.activate([
+            label.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 4),
+            label.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -4),
+            label.topAnchor.constraint(equalTo: view.topAnchor, constant: 2),
+            label.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -2)
+        ])
+        
+        return view
     }()
     
     private lazy var titleLabel: UILabel = {
@@ -60,10 +74,9 @@ final class RestaurantTableViewCell: UITableViewCell {
     var restaurant: Restaurant? {
         didSet {
             guard let restaurant = restaurant else { return }
-            restaurantImageView.image = UIImage(named: "placeholder.png")
+            restaurantImageView.image = UIImage(named: "restaurant-\(restaurant.id % 2 + 1).png")
             titleLabel.text = restaurant.name
             addressLabel.text = "Damsgårdsveien 105, 5058 Bergen"
-            openStatusLabel.text = "open".uppercased()
         }
     }
     
@@ -81,7 +94,7 @@ final class RestaurantTableViewCell: UITableViewCell {
     private func setupChildViews() {
         addSubview(wrapperView)
         wrapperView.addSubview(restaurantImageView)
-        wrapperView.addSubview(openStatusLabel)
+        wrapperView.addSubview(openStatusWrap)
         wrapperView.addSubview(titleLabel)
         wrapperView.addSubview(addressLabel)
         
@@ -95,8 +108,8 @@ final class RestaurantTableViewCell: UITableViewCell {
             restaurantImageView.topAnchor.constraint(equalTo: wrapperView.topAnchor),
             restaurantImageView.heightAnchor.constraint(greaterThanOrEqualToConstant: 60),
             restaurantImageView.heightAnchor.constraint(lessThanOrEqualToConstant: 110),
-            openStatusLabel.leftAnchor.constraint(equalTo: wrapperView.leftAnchor, constant: 12),
-            openStatusLabel.topAnchor.constraint(equalTo: wrapperView.topAnchor, constant: 12),
+            openStatusWrap.leftAnchor.constraint(equalTo: wrapperView.leftAnchor, constant: 12),
+            openStatusWrap.topAnchor.constraint(equalTo: wrapperView.topAnchor, constant: 12),
             titleLabel.leftAnchor.constraint(equalTo: wrapperView.leftAnchor, constant: 12),
             titleLabel.rightAnchor.constraint(equalTo: wrapperView.rightAnchor, constant: -12),
             titleLabel.topAnchor.constraint(equalTo: restaurantImageView.bottomAnchor, constant: 12),
@@ -105,11 +118,5 @@ final class RestaurantTableViewCell: UITableViewCell {
             addressLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
             addressLabel.bottomAnchor.constraint(equalTo: wrapperView.bottomAnchor, constant: -12)
         ])
-    }
-    
-    private func scaledImage() -> UIImage {
-        let image = UIImage(named: "placeholder.png")!
-        let newSize = CGSize(width: 420, height: 250)
-        return image.scalePreservingAspectRatio(targetSize: newSize)
     }
 }

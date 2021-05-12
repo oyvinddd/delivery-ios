@@ -14,7 +14,7 @@ final class RestaurantsViewController: UIViewController {
     }
     
     private lazy var topBar: TopBar = {
-        return TopBar(account: Account.current)
+        return TopBar(account: Account.current, delegate: self)
     }()
     
     private lazy var refreshControl: UIRefreshControl = {
@@ -102,7 +102,7 @@ extension RestaurantsViewController: UITableViewDataSource {
         // header 1
         if indexPath.row == TableViewType.header1.rawValue {
             let cell = tableView.dequeueReusableCell(for: HeaderTableViewCell.self, for: indexPath)
-            cell.header = "Special Offers"
+            cell.header = "Special Offers 🔥"
             return cell
         }
         // special offers
@@ -121,10 +121,25 @@ extension RestaurantsViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - Table View Delegate
+
 extension RestaurantsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewController = RestaurantViewController(restaurant: restaurants[indexPath.row])
-        navigationController?.pushViewController(viewController, animated: true)
+        // restaurant list starts at row 4
+        if indexPath.row > 3 {
+            let index = indexPath.row - 4
+            let viewController = RestaurantViewController(restaurant: restaurants[index])
+            navigationController?.pushViewController(viewController, animated: true)
+        }
+    }
+}
+
+// MARK: - Top Bar Delegate
+
+extension RestaurantsViewController: TopBarDelegate {
+    
+    func didTapProfilePicture() {
+        present(PopUpViewController(), animated: false, completion: nil)
     }
 }
