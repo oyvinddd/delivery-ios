@@ -59,3 +59,10 @@ struct CreateOrderRequest: DERequest {
         body = try? encoder.encode(request)
     }
 }
+
+struct OrdersRequest: DERequest {
+    var endpoint: String = Endpoints.orders
+    var method: HTTPMethod = .get
+    var params: [DEParam] = []
+    var body: Data? = nil
+}

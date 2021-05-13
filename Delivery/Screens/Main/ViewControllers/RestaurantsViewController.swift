@@ -45,7 +45,6 @@ final class RestaurantsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        hidesBottomBarWhenPushed = true
         setupChildViews()
         fetchRestaurants()
     }
@@ -131,6 +130,7 @@ extension RestaurantsViewController: UITableViewDelegate {
         if indexPath.row > 3 {
             let index = indexPath.row - 4
             let viewController = RestaurantViewController(restaurant: restaurants[index])
+            viewController.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(viewController, animated: true)
         }
     }

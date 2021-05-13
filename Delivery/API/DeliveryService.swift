@@ -24,5 +24,9 @@ final class DeliveryService {
         static func create(request: OrderRequest, result: @escaping ResultBlock<Order>) {
             ordersRepo.createOrder(orderRequest: request, result: result)
         }
+        
+        static func list(result: @escaping ResultBlock<[Order]>) {
+            ordersRepo.getOrders(customerID: 0, result: result)
+        }
     }
 }

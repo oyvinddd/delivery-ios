@@ -12,7 +12,6 @@ struct Order: Codable {
     var status: Int
     var food: Food
     var origin: Restaurant
-    //var destination: Customer
 }
 
 struct OrderRequest: Codable {
