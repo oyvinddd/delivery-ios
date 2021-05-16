@@ -194,6 +194,7 @@ final class RestaurantViewController: UIViewController {
             switch result {
             case .success(let order):
                 print("Order created: \(order)")
+                self.navigationController?.popViewController(animated: true)
                 break
             case .failure(let error):
                 print("Error creating order: \(error.localizedDescription)")
