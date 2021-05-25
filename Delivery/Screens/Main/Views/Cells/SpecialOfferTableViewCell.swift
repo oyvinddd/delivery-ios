@@ -32,20 +32,20 @@ final class SpecialOfferTableViewCell: UITableViewCell {
             id: 2,
             customerID: 3,
             price: 199,
-            food: Food(restaurantId: 3, type: 4, name: "Steak", lowerPrice: 199, normalPrice: 229),
+            food: Food(restaurantId: 3, type: 4, name: "Steak", lowerPrice: 199, normalPrice: 229, preparationTime: 0, expirationTime: 0),
             expirationTime: "EXPIRES IN 02:11"
         ),
         SpecialOffer(
             id: 0,
             customerID: 0,
             price: 119,
-            food: Food(restaurantId: 0, type: 1, name: "Sushi", lowerPrice: 119, normalPrice: 159),
+            food: Food(restaurantId: 0, type: 1, name: "Sushi", lowerPrice: 119, normalPrice: 159, preparationTime: 0, expirationTime: 0),
             expirationTime: "EXPIRES IN 05:01"),
         SpecialOffer(
             id: 1,
             customerID: 1,
             price: 129,
-            food: Food(restaurantId: 1, type: 0, name: "Burger", lowerPrice: 129, normalPrice: 189),
+            food: Food(restaurantId: 1, type: 0, name: "Burger", lowerPrice: 129, normalPrice: 189, preparationTime: 0, expirationTime: 0),
             expirationTime: "EXPIRES IN 05:22"
         )
     ]

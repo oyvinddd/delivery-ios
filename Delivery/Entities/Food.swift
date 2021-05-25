@@ -25,8 +25,10 @@ struct Food: Codable {
     var restaurantId: Int
     var type: Int
     var name: String
-    var lowerPrice: Int
-    var normalPrice: Int
+    var lowerPrice: Float
+    var normalPrice: Float
+    var preparationTime: Int
+    var expirationTime: Int
     
     func emojiAndColor() -> (String, UIColor) {
         if type >= 0 && type <= 9 {
